@@ -59,16 +59,40 @@ class HomePage extends StatelessWidget {
                                   ],
                                 ),
                                 SizedBox(
-                                  height: 20,
+                                  height: 8,
                                 ),
-                                const Text(
-                                  "Most Popular food in the world,Most Popular food in the world Most Popular food in the world",
-                                  maxLines: 2,
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 10),
-                                  overflow: TextOverflow.ellipsis,
+                                Expanded(
+                                  flex: 1,
+                                  child: Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      const Text(
+                                        "Most Popular food in the world,Most Popular food in the world Most Popular food in the world",
+                                        maxLines: 2,
+                                        style: TextStyle(
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.w400,
+                                            fontSize: 10),
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                      SizedBox(
+                                        height: 20,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: double.infinity,
+                                  child: ElevatedButton(
+                                      onPressed: () {},
+                                      style: ElevatedButton.styleFrom(
+                                        backgroundColor: Colors.yellow[800],
+                                      ),
+                                      child: Text(
+                                        'Add to Cart',
+                                        style: TextStyle(color: Colors.white),
+                                      )),
                                 )
                               ],
                             ),
