@@ -1,19 +1,29 @@
 name: login_apps
 description: "A new Flutter project."
-publish_to: 'none'
+publish_to: "none"
 version: 0.1.0
 
 environment:
-  sdk: '>=3.2.0 <4.0.0'
+  sdk: ">=3.2.0 <4.0.0"
 
 dependencies:
+  dio: ^5.3.4
   flutter:
     sdk: flutter
+  get: ^4.6.6
 
 dev_dependencies:
+  flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/images/food-1.jpeg
+    - assets/images/food-2.jpeg
+    - assets/images/food-3.jpeg
+    - assets/images/food-4.jpeg
+    - assets/images/food-5.jpeg
+    - assets/images/profile-photo.jpg
