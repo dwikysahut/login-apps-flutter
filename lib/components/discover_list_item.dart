@@ -16,7 +16,7 @@ class DiscoverListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.fromLTRB(12, 12, 0, 12),
+      margin: EdgeInsets.fromLTRB(12, 0, 0, 12),
       height: 150,
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
