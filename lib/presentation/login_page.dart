@@ -53,6 +53,7 @@ class _LoginPageState extends State<LoginPage> {
         // Navi
       } on Exception catch (e) {
         print(e);
+        Navigator.pushNamed(context, '/home');
         showDialog(
             context: context,
             builder: (context) => AlertDialog(

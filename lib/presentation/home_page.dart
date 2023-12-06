@@ -1,19 +1,46 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:login_apps/bloc/cart.dart';
 import 'package:login_apps/components/card_profile.dart';
 import 'package:login_apps/components/discover_list_item.dart';
 import 'package:login_apps/components/modal/bottom_modal_item.dart';
 import 'package:login_apps/components/rating_bar.dart';
+import 'package:badges/badges.dart' as badges;
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    CartProvider cartProvider = BlocProvider.of<CartProvider>(context);
+
     return Scaffold(
         body: SafeArea(
       child: SingleChildScrollView(
         child: Column(
           children: [
+            Container(
+              decoration: const BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(width: 1, color: Colors.grey),
+                ),
+              ),
+              padding: const EdgeInsets.all(10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Icon(Icons.list, size: 33),
+                  BlocBuilder(
+                      bloc: cartProvider,
+                      builder: (context, state) {
+                        return badges.Badge(
+                            child: Icon(Icons.shopping_cart),
+                            badgeContent: Text('${(state as List).length}'),
+                            badgeAnimation: badges.BadgeAnimation.fade());
+                      })
+                ],
+              ),
+            ),
             const CardProfile(),
             renderDiscoverable(),
             const CardFeatured()
@@ -31,7 +58,7 @@ class HomePage extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              TitleListView(
+              const TitleListView(
                 title: "Must Try",
                 subTitle: "Based on the popularity of articles",
               ),
@@ -41,7 +68,7 @@ class HomePage extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              TitleListView(
+              const TitleListView(
                 title: "New release",
                 subTitle: "Discover new release",
               ),

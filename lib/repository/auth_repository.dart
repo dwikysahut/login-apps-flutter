@@ -15,6 +15,7 @@ class AuthRepository {
 
       LoginResponse _loginResponse = LoginResponse.fromJson(_response.data);
     } on DioException catch (e) {
+      print(e);
       throw Exception(e.response?.data['error'].toString());
     }
   }

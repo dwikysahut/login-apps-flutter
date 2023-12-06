@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:login_apps/bloc/cart.dart';
 import 'package:login_apps/components/modal/bottom_modal_item.dart';
 import 'package:login_apps/components/rating_bar.dart';
 
